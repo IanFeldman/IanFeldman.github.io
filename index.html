@@ -4,50 +4,45 @@
 		<title>Home</title>
 		<!-- Adds in my css script -->
 		<link rel="stylesheet" type ="text/css" href="CSS/index_style.css">
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+		<!-- Popper JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	</head>
 	
 	<body>
-		<div id="title_box">
-			<div id="title_text-icon"> <!-- float left -->
-				<img src="Assets/Folder_Icon.png" alt="Folder Icon" id="folder_icon"> <!--float left-->
-				<div id="title_text">Ian_Feldman</div> <!--float right-->
-			</div>
-
-			
-			<div id="title_buttonsholder"> <!-- float right: holds x out and subholder-->
-			
-				<!-- x-out 'button' - float right inside buttons holder-->
-				<div class="title_buttons" id="title_x">X</div>
-				
-				<div id="title_subbuttonsholder"> <!-- float left in button holder: holds minimize and maximize -->
-					<!-- expand 'button' - float right-->
-					<div class="title_buttons" id="title_expand">
-						<div id="title_expandicon"></div>
-					</div>
-					
-					<!-- minimize 'button' - float left -->
-					<div class="title_buttons" id="title_minimize">_</div>
+		<!-- Header - all the way across -->
+		<div class="container-fluid" id="header">
+			<div class="row" id="top_row"> 
+				<div class="col-sm-6 d-flex" id="top_row_left">
+						<div id="icon_holder"> <img src="Assets/Folder_Icon.png" id="folder_icon"> </div>
+						<div id="title">Ian_Feldman</div>
 				</div>
 				
+				<div class="col-sm-6" id="top_row_right">
+					<div class="d-inline-flex justify-content-end container-fluid" id="top_row_right">
+						<div> <div class="title_buttons" id="title_minimize">_</div> </div>
+						<div>
+							<div class="title_buttons" id="title_expand">
+								<div id="title_expandicon"></div>
+							</div>
+						</div>
+						<div><div class="title_buttons" id="title_x">X</div></div>
+					</div>				
+				</div>
 			</div>
-		</div>
-		
-		<div id="toolbar">F&#818;ile E&#818;dit V&#818;iew O&#818;ptions H&#818;elp</div>
-		
-		<div id="body_box">
-		
-			<img src="Assets/Win95_Image.jpg" alt="Image" id="setup_image">
 			
-			<div id="text_area">
-				<div id="body_text">I don't know what to put here</div>
-				
-				<button type="button" id="button" onclick="getElementById('reveal_text').innerHTML = 'hi'">Click Me</button>
-				
-				<div id="reveal_text"></div>
+			<div class="row"> 
+			
 			</div>
 		</div>
-		
-
-		
 	</body>
 </html>
