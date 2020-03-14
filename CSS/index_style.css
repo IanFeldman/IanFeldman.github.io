@@ -80,6 +80,8 @@ body {
 	border-top-width: 4px;
 	margin-top: 3px;
 	height: 8px;
+	width: 65%;
+	padding-right: 1px;
 }
 
 #title_minimize {
