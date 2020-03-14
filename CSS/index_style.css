@@ -11,7 +11,7 @@ body {
 
 #title_box {
 	background-color: RGB(8, 0, 126);
-	height: 30px;
+	height: 32px;
 	margin-left: 0.4%;
 	margin-right: 0.4%;
 	margin-top: 3px;
@@ -89,3 +89,54 @@ body {
 	
 	float:left;
 }
+
+#toolbar {
+	font-family: 'VT323', monospace;
+	font-size: 18px;
+	
+	margin-left: 0.5%;
+	margin-bottom: 4px;
+}
+
+#body_box {
+	border-style:solid;
+	border-color: rgb(150,150,150) white white rgb(150,150,150);
+}
+
+#setup_image {
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	
+	margin: 20px;
+}
+
+#text_area {
+	float: right;
+	
+	margin-top: 21px;
+	margin-right: 5%;
+	height: 255px;
+	width: 80%;
+}
+
+#body_text {
+	font-family: 'VT323', monospace;
+	font-size: 30px;
+}
+
+#button {
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	background-color: rgb(200,200,200);
+	width: 10%;
+	height: 20 px;
+	
+	margin-top: 5px;
+}
+
+#reveal_text {
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+}
+
