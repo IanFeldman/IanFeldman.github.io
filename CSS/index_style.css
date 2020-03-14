@@ -1,27 +1,93 @@
 body {
-	background-color: white
+	background-color: rgb(200,200,200);
+	border-style: solid;
+	border-width: 5px;
+	
+	/*top, right, bottom, left */
+	border-color: white rgb(180,180,180) rgb(180,180,180) white;
 }
 
-#title {
-	margin-left: 40%;
-	height: 50px;
+#title_box {
+	background-color: RGB(8, 0, 126);
+	height: 30px;
+	margin-left: 0.4%;
+	margin-right: 0.4%;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+#title_text {
+	color: white;
+	padding-top: 5px;
+	margin-left: 0.4%;
+	font-family: "Lucida Console", Monospace;
+	font-size: 20px;
+	font-weight: bold;
+	
+	float: left;
+}
+
+#title_buttonsholder {
+	margin-top:3px;
+	margin-right: 0.4%;
+	width: 5%;
+	height: 20px;
+	
+	float: right;
+}
+
+#title_subbuttonsholder {
+	width: 65%;
+	height: 20px;
+	
+	float: left;
+}
+
+.title_buttons {
+	color: black;
+	background-color: rgb(200,200,200);
+	
+	font-family: "Lucida Console", Monospace;
+	font-size: 20px;
+	font-weight: bold;
+	
+	border-style: solid;
+	border-color: white rgb(180,180,180) rgb(180,180,180) white;
+	border-width: 2px;
+}
+
+#title_x {
 	width: 20%;
-	border-bottom-style: solid;
-	border-bottom-color: tomato;
-	text-align: center;
+	
+	padding-left: 2px;
+	padding-right: 2px;
+	
+	float:right;
 }
 
-#p1 {
-	height: 50px;
-	text-align: center;
+#title_expand {
+	width: 30%;
+	height: 20px;
+	
+	padding-left: 2px;
+	padding-right: 2px;
+	
+	float:right;
 }
 
-#list{
-	width: 8%;
-	margin-left: 46%;
+#title_expandicon {
+	border-style: solid;
+	border-width: 2px;
+	border-top-width: 4px;
+	margin-top: 3px;
+	height: 8px;
 }
 
-#link{
-	text-decoration: none;
-	color: #F66F34;
+#title_minimize {
+	width: 28%;
+	height: 20px;
+	
+	padding-left: 2px;
+	padding-right: 2px;
+	
+	float:left;
 }

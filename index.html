@@ -2,19 +2,32 @@
 <html>
 	<head>
 		<title>Home</title>
-		<!-- Adds in my css sheet -->
+		<!-- Adds in my css script -->
 		<link rel="stylesheet" type ="text/css" href="CSS/index_style.css">
 	</head>
 	
 	<body>
-		<h1 id="title">Welcome</h1>
-		<p id="p1">I do be web designing though &#128511;</p>
-		
-		<ul id ="list">
-			<li> <a href="page1.html" id="link">Page 2</a> </li>
-			<li>--------</li>
-			<li>--------</li>
-			<li>--------</li>
-		</ul>
+		<div id="title_box">
+			<div id="title_text">Ian_Feldman</div> <!-- float left -->
+			
+			<div id="title_buttonsholder"> <!-- float right: holds x out and subholder-->
+			
+				<!-- x-out 'button' - float right inside buttons holder-->
+				<div class="title_buttons" id="title_x">X</div>
+				
+				<div id="title_subbuttonsholder"> <!-- float left in button holder: holds minimize and maximize -->
+					<!-- expand 'button' - float right-->
+					<div class="title_buttons" id="title_expand">
+						<div id="title_expandicon"></div>
+					</div>
+					
+					<!-- minimize 'button' - float left -->
+					<div class="title_buttons" id="title_minimize">_</div>
+				</div>
+				
+			</div>
+			
+
+		</div>
 	</body>
 </html>
