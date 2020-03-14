@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=VT323&display=swap');
+
 body {
 	background-color: rgb(200,200,200);
 	border-style: solid;
@@ -15,13 +17,12 @@ body {
 	margin-top: 3px;
 	margin-bottom: 3px;
 }
+
 #title_text {
 	color: white;
-	padding-top: 5px;
 	margin-left: 0.4%;
-	font-family: "Lucida Console", Monospace;
-	font-size: 20px;
-	font-weight: bold;
+	font-family: 'VT323', monospace;
+	font-size: 30px;
 	
 	float: left;
 }
@@ -46,20 +47,19 @@ body {
 	color: black;
 	background-color: rgb(200,200,200);
 	
-	font-family: "Lucida Console", Monospace;
+	font-family: 'VT323', monospace;
 	font-size: 20px;
 	font-weight: bold;
 	
 	border-style: solid;
 	border-color: white rgb(180,180,180) rgb(180,180,180) white;
 	border-width: 2px;
+	
+	text-align: center;
 }
 
 #title_x {
-	width: 20%;
-	
-	padding-left: 2px;
-	padding-right: 2px;
+	width: 23%;
 	
 	float:right;
 }
@@ -83,11 +83,7 @@ body {
 }
 
 #title_minimize {
-	width: 28%;
-	height: 20px;
-	
-	padding-left: 2px;
-	padding-right: 2px;
+	width: 36%;
 	
 	float:left;
 }
