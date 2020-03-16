@@ -244,3 +244,10 @@ body {
 	font-family: 'VT323', monospace;
 	font-size: 1.5vw;
 }
+
+#submit_notice {
+	font-family: 'VT323', monospace;
+	font-size: 1.1vw;
+	
+	margin-left: 4%;
+}
