@@ -4,8 +4,38 @@
     background-color: black; 
 }
 
-#title {
+#headeritems {
     font-family: 'Noto Sans Mono', monospace;
     color: white;
     font-size: 150%;
+    flex-basis: 25%;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-between;
+}
+
+#parallax1 {
+    background-image: url("../assets/stockphoto1.jpg");
+
+    min-height: 650px;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#parallax2 {
+    background-image: url("../assets/stockphoto2.jpg");
+
+    min-height: 650px;
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
