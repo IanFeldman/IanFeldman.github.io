@@ -4,6 +4,9 @@
     background-color: black; 
 }
 
+#header {
+    padding: 5px;
+}
 #headeritems {
     font-family: 'Noto Sans Mono', monospace;
     color: white;
@@ -38,4 +41,21 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+#passage1 {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Noto Sans Mono', monospace;
+    color: white;
+}
+
+#portrait {
+    width: 25%;
+    height: auto;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
