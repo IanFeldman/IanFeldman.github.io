@@ -7,9 +7,12 @@
 #header {
     padding: 5px;
 }
+
 #headeritems {
     flex-basis: 25%;
+    color: white;
 }
+
 #headerlinks {
     font-family: 'Noto Sans Mono', monospace;
     color: white;
