@@ -10,7 +10,10 @@
 
 #headeritems {
     flex-basis: 25%;
-    color: white;
+}
+
+a {
+    color: inherit;
 }
 
 #headerlinks {
