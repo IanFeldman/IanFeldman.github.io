@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@200&display=swap');
 
 #body {
-    background-color: black; 
+    background-color: #F3EBE1; 
 }
 
 #header {
-    padding: 5px;
+    padding: 20px;
 }
 
 #headeritems {
     flex-basis: 25%;
-    color: white;
 }
 
 a {
@@ -19,8 +18,8 @@ a {
 
 #headerlinks {
     font-family: 'Noto Sans Mono', monospace;
-    color: white;
-    font-size: 150%;
+    color: black;
+    font-size: 200%;
 }
 
 .flex-container {
@@ -30,41 +29,14 @@ a {
     align-content: space-between;
 }
 
-#parallax1 {
-    background-image: url("../assets/stockphoto1.jpg");
-
-    min-height: 650px;
-    
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#parallax2 {
-    background-image: url("../assets/stockphoto2.jpg");
-
-    min-height: 650px;
-    
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#passage1 {
-    width: 50%;
-    margin: 0 auto;
-    padding: 10px;
-    text-align: center;
-    font-family: 'Noto Sans Mono', monospace;
-    color: white;
-}
-
 #portrait {
-    width: 25%;
-    height: auto;
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 500px;
+    margin: 25px;
+    font-size: 40%;
+}
+
+#about {
+    font-family: 'Noto Sans Mono', monospace;
+    color: black;
+    font-size: 100%;
 }
