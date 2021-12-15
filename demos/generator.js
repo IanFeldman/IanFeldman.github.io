@@ -31,6 +31,9 @@ var Add = function () {
 }
 
 var Generate = function () {
+    if (order.length == 0)
+        return;
+    
     let output = "";
     for (var i = 0; i < order.length; i++) {
         let cat = order[i];
