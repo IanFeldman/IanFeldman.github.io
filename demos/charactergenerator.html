@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Random Art Prompt Generator</title>
+        <script src="generator.js"></script>
+    </head>
+    
+    <body onload="UpdateOrderText();">
+        <!--
+        <form>
+            <label for="fname">Input characteristics:</label><br>
+            <input type="text" id="fname" name="fname">
+        </form>
+        -->
+        
+        <div>Current output:</div>
+        <div id="order"></div>
+        <div>
+            <button type="button" onclick="Remove();">-</button>
+            <button type="button" onclick="Add();">+</button>
+            <select name="catSelect" id="catSelect">
+                <option value="adjectives">adjectives</option>
+                <option value="physicalTraits">physicalTraits</option>
+                <option value="races">races</option>
+                <option value="professions">professions</option>
+            </select>
+        </div>
+        
+        <button type="button" onclick="Generate();">Generate</button>
+    </body>
+</html
+
