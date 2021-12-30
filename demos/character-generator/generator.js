@@ -47,6 +47,7 @@ var Generate = function () {
             output += ".";
     }
     
+    // set as a or an
     let article = "A ";
     let fl = output.charAt(0);
     if (fl == "a" || fl == "e" || fl == "i" || fl == "o" || fl == "u") {
