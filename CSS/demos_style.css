@@ -30,13 +30,13 @@ a {
     align-content: space-between;
 }
 
-#portrait {
-    width: 500px;
-    margin: 25px;
-    font-size: 50%;
-}
-
-#about {
+.info {
+    display: none;
+    margin-left: 20px;
     color: black;
     font-size: 100%;
+}
+
+.item:hover + .info {
+    display: block;
 }

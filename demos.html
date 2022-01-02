@@ -5,8 +5,8 @@
 		<meta charset="utf-8">
 		<!-- allow proper rendering and touch zooming on mobile -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- My css -->
-		<link rel="stylesheet" type ="text/css" href="CSS/index_style.css">
+		<!-- my css -->
+		<link rel="stylesheet" type ="text/css" href="css/demos_style.css">
 
 		<!-- Bootstrap 4-->
 		<!-- Latest compiled and minified CSS -->
@@ -26,8 +26,25 @@
 	</head>
 
     <body>
+        <!-- header -->
+        <div class="flex-container" id="header">
+            <div id="headeritems"><a href="./index.html" id="headerlinks">/ianfeldman</a></div>
+            <div id="headeritems"><a href="https://github.com/IanFeldman?tab=repositories" target="_blank" id="headerlinks">/projects</a></div>
+            <div id="headeritems"><a href="./demos.html" id="headerlinks">/demos</a></div>
+            <div id="headeritems"><a href="./contact.html" id="headerlinks">/contact</a></div>
+        </div>
         <ul>
-            <li><a href="./demos/character-generator/index.html" target="_blank">random character generator</a></li>
-            <li><a href="./demos/hardware-sim/index.html" target="_blank">hardware sim</a></li>
+            <li>
+                <div class="flex-container">
+                    <a class="item" href="./demos/character-generator/index.html" target="_blank">random character generator</a>
+                    <div class="info">generates random description of a character dependent on the user-chosen order of descriptors</div>
+                </div>
+            </li>
+            <li>
+                <div class="flex-container">
+                    <a class="item" href="./demos/hardware-sim/index.html" target="_blank">hardware sim</a>
+                    <div class="info">simulates the function of various simple logic gates</div>
+                </div>
+            </li>
         </ul>
     </body>

@@ -30,13 +30,6 @@ a {
     align-content: space-between;
 }
 
-#portrait {
-    width: 500px;
-    margin: 25px;
-    font-size: 50%;
-}
-
-#about {
-    color: black;
-    font-size: 100%;
+.contact-info {
+    padding-left:20px;
 }
