@@ -9,7 +9,9 @@
     
     <body onload="loadCookies()">
         <div>
-            <input type="text" id="input">  <button onclick="addItem()">add item</button> <button onclick="reset()">reset</button>
+            <input type="text" id="input" onKeyPress="return checkSubmit(event)">
+            <button onclick="addItem()">add item</button>
+            <button onclick="reset()">reset</button>
         </div>
         
         <br>

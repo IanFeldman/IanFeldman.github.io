@@ -1,8 +1,12 @@
 function addItem() {
     const text = document.getElementById("input").value;
+    if (text == "") {
+        return;
+    }
+    document.getElementById("input").value = "";
     
     // determine name
-    var newName = ""
+    var newName = "";
     cookies = document.cookie.split(";");
     // first cookie case
     if (cookies.length == 1 && cookies[0] == "") {
@@ -71,4 +75,12 @@ function reset() {
     for (var i = 0; i < 1000; i++) {
         document.cookie = i.toString() + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; SameSite=Strict";
     }
+    // reload page
+    location.reload();
 }
+
+function checkSubmit(event) {
+    if(event && event.keyCode == 13) {
+       addItem();
+    }
+ }
