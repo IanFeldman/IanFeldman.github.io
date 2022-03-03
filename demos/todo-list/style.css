@@ -1,0 +1,8 @@
+* {
+    font-family:'Andale Mono';
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    width: fit-content;
+}
