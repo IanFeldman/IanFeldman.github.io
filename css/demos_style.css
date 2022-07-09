@@ -1,26 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
 
 * {
-    background-color: #F3EBE1;
+    background-color: #114B5F;
     font-family: 'Noto Sans Mono', monospace;
 }
 
 #header {
     padding: 20px;
+    background-color: #028090;
 }
 
 #headeritems {
+    background-color: #028090;
     flex-basis: 25%;
-    text-decoration: underline;
-}
-
-a {
-    color: inherit;
 }
 
 #headerlinks {
-    color: black;
-    font-size: 200%;
+    color: #FFFFFF;
+    font-size: 300%;
+}
+
+#list {
+    padding: 2%;
+    font-size: 125%;
+    color: #FFFFFF;
 }
 
 .flex-container {
@@ -33,10 +36,21 @@ a {
 .info {
     display: none;
     margin-left: 20px;
-    color: black;
+    color: white;
     font-size: 100%;
 }
 
 .item:hover + .info {
     display: block;
 }
+
+.item:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+.item {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+

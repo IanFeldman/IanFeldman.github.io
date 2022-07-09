@@ -1,26 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
 
 * {
-    background-color: #F3EBE1;
+    background-color: #114B5F;
     font-family: 'Noto Sans Mono', monospace;
 }
 
 #header {
     padding: 20px;
+    background-color: #028090;
 }
 
 #headeritems {
+    background-color: #028090;
     flex-basis: 25%;
-    text-decoration: underline;
-}
-
-a {
-    color: inherit;
 }
 
 #headerlinks {
-    color: black;
-    font-size: 200%;
+    color: #FFFFFF;
+    font-size: 300%;
 }
 
 .flex-container {
@@ -30,13 +27,29 @@ a {
     align-content: space-between;
 }
 
-#portrait {
-    width: 500px;
-    margin: 25px;
-    font-size: 50%;
+#left-body {
+    flex-basis: 30%;
+    border-style: solid;
+    border-width: 2px;
+    margin-left: 2%;
+    margin-bottom: 10%;
+    padding: 2%;
+    color: white;
+    font-size: 150%;
 }
 
-#about {
-    color: black;
-    font-size: 100%;
+#middle-body {
+    flex-basis: 40%;
+}
+
+#portrait {
+    width: 80%;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#right-body {
+    color: #FFFFFF;
+    flex-basis: 30%;
 }
