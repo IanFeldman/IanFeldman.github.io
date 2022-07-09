@@ -1,23 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300&display=swap');
 
 * {
-    background-color: #114B5F;
+    background-color: #222222;
     font-family: 'Noto Sans Mono', monospace;
 }
 
 #header {
     padding: 20px;
-    background-color: #028090;
+    background-color: #333333;
 }
 
-#headeritems {
-    background-color: #028090;
+.header-items {
+    background-color: #333333;
     flex-basis: 25%;
+    text-align: center;
 }
 
-#headerlinks {
+.header-links {
     color: #FFFFFF;
     font-size: 300%;
+}
+
+.header-links:hover {
+    color: #ED8254;
 }
 
 .flex-container {
@@ -27,8 +32,3 @@
     align-content: space-between;
 }
 
-#contact-info {
-    padding-left: 2%;
-    color: #FFFFFF;
-    font-size: 150%;
-}
