@@ -11,19 +11,21 @@ h1,h2,h3 {
     line-height: 1.2;
 }
 
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
 .title {
-    display: inline-block;
-    margin-right: 300px;
-    vertical-align: middle;
+    flex: 8;
 }
 
 .social-link {
-    font-size: 0;
-    vertical-align: middle;
+    flex: 1;
 }
 
 .social-icon {
-    vertical-align: middle;
+    margin-top: 10px;
     width: 50px;
     height: 50px;
     fill: #444;
