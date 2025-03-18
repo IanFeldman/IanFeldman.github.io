@@ -1,4 +1,4 @@
-body {
+.body {
     margin: 40px auto;
     max-width: 650px;
     line-height: 1.6;
@@ -13,7 +13,7 @@ h1,h2,h3 {
     line-height: 1.2;
 }
 
-.flex-container {
+.title-container {
     display: flex;
     align-items: center;
 }
@@ -41,5 +41,37 @@ h1,h2,h3 {
 
 .dinkus span {
       margin: 0 15px; /* Space between each asterisk */
+}
+
+.page-link {
+    margin: auto;
+    font-size: 32px;
+    font-weight: 800;
+    color: #444;
+}
+
+@media (max-width: 831px) {
+    .gallery {
+        max-width: 600px !important;
+    }
+}
+
+@media (max-width: 559px) {
+    .gallery {
+        justify-content: center !important;
+    }
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px auto;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+.poster {
+    max-width: 272px;
+    margin-bottom: 60px;
 }
 
