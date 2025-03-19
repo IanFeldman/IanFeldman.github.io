@@ -43,10 +43,18 @@ h1,h2,h3 {
       margin: 0 15px; /* Space between each asterisk */
 }
 
+.link-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .page-link {
-    margin: auto;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 800;
+    text-decoration: none;
     color: #444;
 }
 
