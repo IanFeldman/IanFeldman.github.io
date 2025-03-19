@@ -40,7 +40,7 @@ h1,h2,h3 {
 }
 
 .dinkus span {
-      margin: 0 15px; /* Space between each asterisk */
+      margin: 0 15px; /* space between each asterisk */
 }
 
 .link-container {
@@ -58,15 +58,48 @@ h1,h2,h3 {
     color: #444;
 }
 
+/* change gallery width to two items */
 @media (max-width: 831px) {
     .gallery {
         max-width: 600px !important;
     }
 }
 
+/* change gallery width to one item */
 @media (max-width: 559px) {
+    /* adjust gallery */
     .gallery {
         justify-content: center !important;
+    }
+}
+
+/* change header features */
+@media (max-width: 410px) {
+    .title {
+        font-size: 24px;
+        margin: 10px;
+    }
+    .page-link {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+    .social-icon {
+        display: none;
+    }
+    .portrait {
+        height: 56px;
+        width: 56px;
+    }
+}
+
+/* absolute smallest */
+@media (max-width: 299px) {
+    /* change page links to be columnated */
+    .link-container {
+        flex-direction: column;
+    }
+    .page-link {
+        text-align: center
     }
 }
 
