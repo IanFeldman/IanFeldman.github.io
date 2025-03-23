@@ -1,0 +1,3 @@
+[submodule "submodules/hardware-sim"]
+	path = submodules/hardware-sim
+	url = https://github.com/IanFeldman/hardware-sim.git
