@@ -34,15 +34,6 @@ h1,h2,h3 {
     fill: #444;
 }
 
-.dinkus {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.dinkus span {
-      margin: 0 15px; /* space between each asterisk */
-}
-
 .link-container {
     display: flex;
     justify-content: space-between;
