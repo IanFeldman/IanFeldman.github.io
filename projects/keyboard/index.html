@@ -8,24 +8,24 @@ layout: default
     <h3>Intro</h3>
     A few years ago I stumbled upon Reddit's <a href="https://www.reddit.com/r/ErgoMechKeyboards/">r/ErgoMechKeyboards</a>. The unconventional, futuristic looking computer keyboards that this community designed and celebrated struck me as fascinating. While I was content with my standard full-size mechanical keyboard, I still felt drawn to these unique devices. I liked that each keyboard had a distinct shape which specifically suited its creator's hands. I also liked that most of these keyboards were far smaller than the typical 104-key US keyboard. As I browsed, many keyboards stood out to me as pieces of art that I could tell were the product of careful thought and intentional design. Recently, my professor reminded me of this when he mentioned switching to an ergo keyboard, and I felt inspired to make my own.
     <br><br>
-    <img class="image" src="assets/keyboard.png" alt="Final Result" width=600>
+    <img class="image" src="assets/keyboard.png" alt="Final Result">
     <div class="caption">My final keyboard design.</div>
     <br>
     I wanted to have as few keys as possible in order to minimize the footprint of the PCB, the number of components, and the cost. It seemed like 34 keys was good for a compact, but still usable and learnable configuration. I looked at several layouts, such as <a href="https://github.com/pierrechevalier83/ferris">Ferris</a>, for reference. I wanted it to be wired, ortholinear, staggered, and split. I envisioned each half to effectively be a mirror image of the other. This way both halves would have the same hardware, could each be plugged into the host computer, and would both have 17 keys. This meant I had to design two PCBs that both used the same overall schematic.
     <h3>Hardware</h3>
     For a microcontroller, I chose the ATMega32u2. Although slightly expensive, it was small, low-power, featured on-board UART and USB peripherals, and had a lot of GPIO. In fact, there were more GPIO pins than key switches. Typically, keyboards and keypads use a <a href="https://www.dribin.org/dave/keyboard/one_html/">matrix configuration</a> where switches are connected in rows and columns to reduce the amount of required GPIO. The benefit of a key matrix is to be able to detect up to <i>m * n</i> switches with only <i>m + n</i> GPIO pins, where <i>m</i> is number of rows and <i>n</i> is number of columns. However, this induces some extra latency and compute because polling is <i>O(m * n)</i>. I planned to connect each key switch directly to a pin and to theoretically achieve a faster keyboard polling time.
     <br><br>
-    <img class="image" src="assets/schematic.png" alt="Hardware schematic." width=600>
+    <img class="image" src="assets/schematic.png" alt="Hardware schematic">
     <div class="caption">Keyboard half hardware schematic.</div>
     <br>
     The final schematic consisted of the MCU and its required hardware (external clock, reset button, USB resistors), some LEDS, programming headers, a USB-C port, a TRRS port (to connect both halves together with power and data), and key switches. All the GPIO connected to key switches would be configured to have internal pull-ups in firmware. These pins could then be read in just three instructions: read port B, port C, and port D (way better than polling a matrix!). The tradeoff here was a more complicated PCB layout, but I liked the idea of eking out better performance. I also planned to implement debounce in firmware to keep the hardware simple.
     <br><br>
-    <img class="image" src="assets/layout-full.png" alt="PCB layout" width=600>
+    <img class="image" src="assets/layout-full.png" alt="PCB layout">
     <div class="caption">Full keyboard PCB layout (minus ground plane).</div>
     <br>
     I decided to use Gateron KS-33 Red low profile switches and DSA keycaps which required 18mm of separation between switches. I staggered the rows to match the natural resting positions of my finger tips. I did this by placing my hand on a piece of paper as relaxed as possible, then marking and measuring the exact vertical distance between each fingertip. I shifted the final column of keys on the outside down to match my little finger's movement outwards. The bottom two key positions were determined in the same way for my thumbs. I then laid out the components and routed everything in KiCad. I tried to follow general good practice: no right angles, one large ground plane, suitable trace widths, and a short clock signal distance. One aspect I could have done better was to avoid long parallel traces. I worried about interference on the USB data lines which stretched from the microcontroller all the way across the board to the USB port, but I luckily didn't run into any issues.
     <br><br>
-    <img class="image" src="assets/pcb.png" alt="Unsoldered PCB." width=600>
+    <img class="image" src="assets/pcb.png" alt="Unsoldered PCB">
     <div class="caption">Ordered PCBs.</div>
     <br>
     I did end up with trouble assembling and debugging the boards. Reflowing the boards did not work properly so I had to fix many of the microcontroller and USB pin connections by hand. Then, the board would not respond at all to my ISP programmer. I probed for continuity, checked power voltages, and even tried using a function generator to inject a stable clock signal in case the crystal oscillator was faulty. None of that worked. What ended up bringing the MCU to life was desoldering the reset button capacitor, C1. I placed that 1uf cap to debounce the reset button. However, it apparently also disrupted the timing of the ISP programming sequence. I removed it from the hardware schematic as it wasn't really necessary.
@@ -34,15 +34,15 @@ layout: default
     <br><br>
     I designed such that one half should be plugged into the host PC at any given time and the other not. I called these halves <i>main</i> and <i>periperal</i> respectively. I wrote firmware to detect which half currently had a valid USB connection and to set that device as <i>main</i>. Keypresses on <i>peripheral</i> were always immediately sent over UART to trigger a hardware interrupt on <i>main</i>. The keypresses were then accumulated in a buffer until <i>main</i> was ready to package and send them off to the host PC. The only data sent from <i>main</i> to <i>peripheral</i> were the layer key presses. Because there were just 34 keys, the keymap required multiple layers to achieve full functionality. The second layer was activated by pressing the layer key.
     <br><br>
-    <img class="image" src="assets/keymap1.png" alt="Keymap" width=600>
+    <img class="image" src="assets/keymap1.png" alt="Keymap">
     <div class="caption">Layer 1 keymap.</div>
     <br>
-    <img class="image" src="assets/keymap2.png" alt="Keymap" width=600>
+    <img class="image" src="assets/keymap2.png" alt="Keymap">
     <div class="caption">Layer 2 keymap.</div>
     <br>
     I spent an afternoon coming up with this keymap which I hoped would be intuitive. My main goal was to keep keys as close as possible to a traditional QWERTY layout so it wouldn't take too much effort to adapt to. On layer 2 there was an extra set of toggleable layer keys to allow for a third layer with function keys, arrow keys, and other miscellaneous keys like printscreen which I could implement in the future.
     <br><br>
-    <img class="image" src="assets/debounce.png" alt="Oscilloscope" width=600>
+    <img class="image" src="assets/debounce.png" alt="Oscilloscope">
     <div class="caption">Key switch bounce timing.</div>
     <br>
     Before implementing debounce, I measured the timing of the switches and found the typical value bounce length to be 4 to 5 microseconds. This was so short that I didn't even bother handling it in firmware and there seemed to be no issues. If I were to redesign the boards, I would put some small capacitors across each switch to filter out the bounce and to increase signal stability.
@@ -51,17 +51,17 @@ layout: default
     <h3>Final Touches</h3>
     To finish up the device, I machined a pair of simple aluminum plates to screw the two PCBs on to. I bought quarter-inch thick stock and cut the plates to size on a bandsaw. I then ground and sanded them down to the right shape, tapped mounting holes, and finished them off with a file by hand.
     <br><br>
-    <img class="image" src="assets/plate-stock.png" alt="Aluminum base plate" width=600>
+    <img class="image" src="assets/plate-stock.png" alt="Aluminum base plate">
     <div class="caption">Aluminum base plates.</div>
     <br>
     It was far from perfect and something like a water jet or CNC would have provided much more precision. But I didn't have the skills necessary to operate those, and I happened to like the rough-hewn look anyway. I stuck a set of adhesive rubber feet to the bottom of each base to ensure they wouldn't slide across my desk while in use, and I called the project complete.
     <br><br>
-    <img class="image" src="assets/holding.png" alt="Keyboard in hand" width=600>
+    <img class="image" src="assets/holding.png" alt="Keyboard in hand">
     <div class="caption">Fully assembled keyboard right half.</div>
     <h3>Results</h3>
     Now that it is finished, I'm very happy with how it came out. It looks and feels great and so far the firmware has held up perfectly. One downside is that it takes a lot of effort to learn to use this keyboard effectively. It is especially difficult to teach my brain to not move my pointer fingers when access keys like <i>G</i> and <i>H</i>. For a future version, I would change it to have an extra column of keys next to my pointer fingers instead of next to my little fingers. For now, I will tinker with the keybinds as I go to find most comfortable setup for me. All the code and hardware designs are public on my github for anyone interested in seeing exactly how everything works!
     <br><br>
-    <img class="image" src="assets/stacked.png" alt="Keyboards stacked" width=600>
+    <img class="image" src="assets/stacked.png" alt="Keyboards stacked">
     <div class="caption">Fully assembled keyboard, plugged in.</div>
     <h3>Some things I should have done differently</h3>
     <ul>
