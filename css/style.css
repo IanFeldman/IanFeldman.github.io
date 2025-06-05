@@ -111,3 +111,23 @@ h1,h2,h3 {
     font-weight: 800;
 }
 
+.project-title {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.project-date {
+    color: #777777;
+}
+
+.image {
+    margin: auto;
+    display: block;
+}
+
+.caption {
+    color: #777777;
+    text-align: center;
+    font-style: italic;
+}
+
